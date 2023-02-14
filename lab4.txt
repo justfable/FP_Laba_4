@@ -1,0 +1,111 @@
+#Задание 1
+text = input("Введите текст: ")
+
+#1. Определяет длину текста
+print("Длина:", len(text))
+
+#2. Переводит текст в нижний регистр
+print("Нижний регистр:", text.lower())
+
+# 3. Переводит текст в верхний регистр
+print("Верхний регистр:", text.upper())
+
+
+# 4. Находит количество одинаковых букв
+n = input("Найти: ")
+print("Количество", n, ": ", text.count(n))
+
+
+# 5. Проверяет с какого слова начинается текст
+l = input("Проверить первое слово: ")
+print("Текст начинается со слова", l, " : ", text.startswith(l))
+
+# 6. Проверяет каким словом заканчивается текст
+p = input("Проверить последнее слово: ")
+print("Текст заканчивается словом", "p" " : ", text.endswith(p))
+
+# 7. Разбивает строку на слова
+words = text.split()
+print("Разбить:", words)
+
+# 8. Соединяет слова обратно в предложение
+joined = ' '.join(words)
+print("Объединить:", joined)
+
+# 9. Заменяет слово в тексте
+m = input("Поменять: ")
+k = input("на: ")
+print("Слово", m, " заменяет слово ", k,":", text.replace(m, k))
+
+# 10. Форматирует текст
+sentence = "Меня зовут {} и я студент {} курса.".format("Мухамммедали", 3)
+print(sentence)
+
+
+
+
+
+
+
+#Задание 2
+students = []
+
+while True:
+    student = input("Введите имя и группу студента (или введите 'q' для выхода): ")
+    if student == 'q':
+        break
+    name, grade = student.split()
+    students.append((name, int(grade)))
+
+students.sort(key=lambda x: x[1])
+
+print("Список студентов:")
+for student in students:
+    print("{} - Группа {}".format(student[0], student[1]))
+
+
+
+
+
+
+
+
+#Задание 3 (часть 1)
+string = input("Текст: ")
+lower_count = 0
+upper_count = 0
+
+for char in string:
+    if char.islower():
+        lower_count += 1
+    elif char.isupper():
+        upper_count += 1
+
+if lower_count >= upper_count:
+    print(string.lower())
+else:
+    print(string.upper())
+
+
+
+
+
+
+
+
+#Задание 3 (часть 2)
+while True:
+    print("Введите целые числа")
+    num1 = input()
+    num2 = input()
+    
+    if num1.isdigit() and num2.isdigit():
+        num1 = int(num1)
+        num2 = int(num2)
+        break
+    else:
+        print("Попробуйте снова")
+
+print("Сумма:", num1 + num2)
+
+
